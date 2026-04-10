@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Token Tracker</h1>
+      <div class="status-indicator" id="status-indicator"></div>
+    </header>
+
+    <div class="hero-section">
+      <div class="model-info">
+        <h2 id="model-name">Loading...</h2>
+        <p id="context-size">Detecting context size...</p>
+      </div>
+
+      <div id="unknown-config" style="display: none;">
+        <p>Set a custom context limit to unlock tracking features.</p>
+        <div class="input-group">
+          <input type="text" id="manual-model-name" placeholder="Model Name (Optional)">
+          <input type="number" id="manual-context-size" placeholder="Context limit (e.g. 128000)">
+          <button id="save-config">Save Limit</button>
+        </div>
+      </div>
+
+      <div class="main-progress">
+        <div class="progress-labels">
+          <span id="tokens-used">0 tokens</span>
+          <span id="percentage">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="main-fill"></div>
+        </div>
+        <div class="progress-footer">
+          <span id="tokens-remaining">0 remaining</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-stats">
+      <div class="stat-card">
+        <h3>User</h3>
+        <p class="stat-val" id="user-tokens">0</p>
+        <span class="stat-sub" id="user-msgs">0 msgs</span>
+      </div>
+      <div class="stat-card">
+        <h3>Model</h3>
+        <p class="stat-val" id="model-tokens">0</p>
+        <span class="stat-sub" id="model-msgs">0 msgs</span>
+      </div>
+      <div class="stat-card">
+        <h3>Avg / Msg</h3>
+        <p class="stat-val" id="avg-tokens">0</p>
+        <span class="stat-sub">Tokens</span>
+      </div>
+      <div class="stat-card">
+        <h3>Est. Left</h3>
+        <p class="stat-val" id="est-msgs">0</p>
+        <span class="stat-sub">Messages</span>
+      </div>
+    </div>
+
+    <div class="compare-section">
+      <label class="compare-label">Compare with other models</label>
+      <div class="custom-select" id="custom-select">
+        <div class="select-trigger" id="select-trigger"><span>Select models...</span> <i class="arrow down"></i></div>
+        <div class="options-container" id="options-container">
+          <!-- Options populated by JS -->
+        </div>
+      </div>
+      <div id="comparisons-list"></div>
+    </div>
+
+    <footer>
+      <span>Show floating widget</span>
+      <label class="switch">
+        <input type="checkbox" id="widget-toggle" checked>
+        <span class="slider round"></span>
+      </label>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
