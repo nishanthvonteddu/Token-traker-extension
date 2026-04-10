@@ -1,5 +1,9 @@
 # Token Tracker
 
+Youtube link 
+https://youtu.be/NgyrKkfKud8
+
+
 Premium token tracker for AI chat platforms. Monitor context window consumption in real-time.
 
 ## Overview
