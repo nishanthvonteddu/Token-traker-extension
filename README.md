@@ -14,12 +14,6 @@ Token Tracker is a browser extension that intercepts and tracks your token usage
 - **Data Parsing**: It parses API responses locally on your device to extract token usage data securely without compromising your prompts or reading your private chat history.
 - **Live Widgets**: The extracted token and context consumption is instantly relayed to a `content.js` script, which renders and updates the draggable floating overlay in real-time.
 
-## Supported Platforms
-- [ChatGPT](https://chatgpt.com)
-- [Claude](https://claude.ai)
-- [Gemini](https://gemini.google.com)
-- [DeepSeek](https://chat.deepseek.com)
-
 ## Features
 - **Real-time Monitoring**: Domain-aware network interception tracks your active usage automatically.
 - **Floating UI Widget**: A sleek, resizable floating pane displaying the context usage data.
