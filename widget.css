@@ -1,0 +1,78 @@
+#token-tracker-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 160px;
+  min-width: 130px;
+  max-width: 500px;
+  resize: horizontal;
+  overflow: hidden;
+  background: var(--tt-bg, #1e1e1e);
+  color: var(--tt-text, #ffffff);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  z-index: 2147483647;
+  /* MAX Z-INDEX */
+  border: 1px solid var(--tt-border, rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s, border 0.2s;
+}
+
+@media (prefers-color-scheme: light) {
+  #token-tracker-widget {
+    --tt-bg: rgba(255, 255, 255, 0.9);
+    --tt-text: #1a1a1a;
+    --tt-border: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+}
+
+#tt-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--tt-text);
+  opacity: 0.5;
+  line-height: 1;
+}
+
+#tt-close:hover {
+  opacity: 1;
+}
+
+#tt-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 14px;
+}
+
+#tt-progress-bg {
+  height: 6px;
+  background: rgba(128, 128, 128, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+#tt-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #10b981;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.4s;
+}
+
+#tt-perc {
+  font-size: 11px;
+  text-align: right;
+  opacity: 0.7;
+  font-weight: 500;
+}
