@@ -1,0 +1,52 @@
+{
+  "manifest_version": 3,
+  "name": "Token Tracker",
+  "version": "1.0",
+  "description": "Premium token tracker for AI chat platforms. Monitor context window consumption in real time.",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "*://chatgpt.com/*",
+    "*://*.chatgpt.com/*",
+    "*://claude.ai/*",
+    "*://*.claude.ai/*",
+    "*://gemini.google.com/*",
+    "*://*.gemini.google.com/*",
+    "*://*.deepseek.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://chatgpt.com/*", 
+        "*://*.chatgpt.com/*", 
+        "*://claude.ai/*", 
+        "*://*.claude.ai/*", 
+        "*://gemini.google.com/*", 
+        "*://*.gemini.google.com/*",
+        "*://*.deepseek.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["widget.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "*://chatgpt.com/*", 
+        "*://*.chatgpt.com/*", 
+        "*://claude.ai/*", 
+        "*://*.claude.ai/*", 
+        "*://gemini.google.com/*", 
+        "*://*.gemini.google.com/*",
+        "*://*.deepseek.com/*"
+      ],
+      "js": ["interceptor.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}
